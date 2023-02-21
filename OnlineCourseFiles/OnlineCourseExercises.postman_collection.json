@@ -1,0 +1,1275 @@
+{
+	"info": {
+		"_postman_id": "489c4f4d-f20d-4d2c-8224-267c2abbdbf2",
+		"name": "PIWorldLabExercises",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Exercise 3 - Constructing PI Web API requests",
+			"item": [
+				{
+					"name": "3.1 Get NuGreen AF database",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{piwebapi}}/assetdatabases?path=TODO",
+							"host": [
+								"{{piwebapi}}"
+							],
+							"path": [
+								"assetdatabases"
+							],
+							"query": [
+								{
+									"key": "path",
+									"value": "TODO"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.2 Create a new root AF element",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "for-CSRF-defense",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Name\": \"OldGreen\",\r\n  \"Description\": \"NuGreen\",\r\n  \"TemplateName\": \"Enterprise\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{piwebapi}}/TODO",
+							"host": [
+								"{{piwebapi}}"
+							],
+							"path": [
+								"TODO"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.3 Create new child element",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "for-CSRF-defense",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Name\": \"ChildElement\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{piwebapi}}/elements/TODO/elements",
+							"host": [
+								"{{piwebapi}}"
+							],
+							"path": [
+								"elements",
+								"TODO",
+								"elements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.4 Create a new static attribute",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "for-CRSF-defense",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Name\": TODO\r\n  \"Description\": \"Created with Postman\",\r\n  \"Type\": \"Int32\",\r\n  \"TypeQualifier\": \"\",\r\n  \"DefaultUnitsName\": \"kilowatt\",\r\n  \"DisplayDigits\": -5,\r\n  \"DataReferencePlugIn\": \"\",\r\n  \"ConfigString\": \"\",\r\n  \"IsConfigurationItem\": false,\r\n  \"IsHidden\": false,\r\n  \"IsManualDataEntry\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{piwebapi}}/elements/TODO/attributes",
+							"host": [
+								"{{piwebapi}}"
+							],
+							"path": [
+								"elements",
+								"TODO",
+								"attributes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.5 Create a new PI tag",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "for-CRSF-defense",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Name\": TODO,\r\n  \"Descriptor\": \"This tag was made with Postman!\",\r\n  \"PointClass\": \"classic\",\r\n  \"PointType\": \"Int32\",\r\n  \"EngineeringUnits\": \"kilowatts\",\r\n  \"Step\": false,\r\n  \"Future\": false,\r\n  \"DisplayDigits\": -5,\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{piwebapi}}/TODO",
+							"host": [
+								"{{piwebapi}}"
+							],
+							"path": [
+								"TODO"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.6 Turn compression off for this tag",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "for-CRSF-defense",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "0",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{piwebapi}}/points/TODO/attributes/compressing",
+							"host": [
+								"{{piwebapi}}"
+							],
+							"path": [
+								"points",
+								"TODO",
+								"attributes",
+								"compressing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.7 Update AF attribute to point to the new tag",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "for-CSRF-defense",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"DataReferencePlugIn\": \"PI Point\",\r\n     \"ConfigString\": TODO\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{piwebapi}}/attributes/TODO",
+							"host": [
+								"{{piwebapi}}"
+							],
+							"path": [
+								"attributes",
+								"TODO"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.8 Write values to tag",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "for-CSRF-defense",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"Timestamp\": \"2020-02-10T00:00:00Z\",\r\n    \"Value\": 1\r\n  },\r\n  {\r\n    \"Timestamp\": \"2020-02-10T01:00:00Z\",\r\n    \"Value\": 2\r\n  },\r\n    {\r\n    \"Timestamp\": \"2020-02-10T02:00:00Z\",\r\n    \"Value\": 3\r\n  },\r\n    {\r\n    \"Timestamp\": \"2020-02-10T03:00:00Z\",\r\n    \"Value\": 4\r\n  },\r\n    {\r\n    \"Timestamp\": \"2020-02-10T04:00:00Z\",\r\n    \"Value\": 5\r\n  }\r\n]"
+						},
+						"url": {
+							"raw": "{{piwebapi}}/streams/TODO/recorded",
+							"host": [
+								"{{piwebapi}}"
+							],
+							"path": [
+								"streams",
+								"TODO",
+								"recorded"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.9 Return the values using the attribute webId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{piwebapi}}/streams/TODO/recorded?startTime=10-Feb-2020&endTime=11-Feb-2020",
+							"host": [
+								"{{piwebapi}}"
+							],
+							"path": [
+								"streams",
+								"TODO",
+								"recorded"
+							],
+							"query": [
+								{
+									"key": "startTime",
+									"value": "10-Feb-2020"
+								},
+								{
+									"key": "endTime",
+									"value": "11-Feb-2020"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.10 Demonstrate cache-control",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "cache-control",
+								"value": "max-age=300",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{piwebapi}}/elements/P1EmUElTUlYwMVxOVUdSRUVOXE9MREdSRUVO/elements",
+							"host": [
+								"{{piwebapi}}"
+							],
+							"path": [
+								"elements",
+								"P1EmUElTUlYwMVxOVUdSRUVOXE9MREdSRUVO",
+								"elements"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "bbcdd8ce-88b3-4d61-a2d0-8703e3199b25",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "221a9922-97cb-40ce-9ffd-cb2889836207",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Exercise 4 - AFSearch endpoints",
+			"item": [
+				{
+					"name": "4.1 Elements search #1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{piwebapi}}/elements/search?databasewebid=P1RDUElTUlYwMVxOVUdSRUVO&query=TODO",
+							"host": [
+								"{{piwebapi}}"
+							],
+							"path": [
+								"elements",
+								"search"
+							],
+							"query": [
+								{
+									"key": "databasewebid",
+									"value": "P1RDUElTUlYwMVxOVUdSRUVO"
+								},
+								{
+									"key": "query",
+									"value": "TODO"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4.2 Elements search #2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{piwebapi}}/elements/search?databasewebid=P1RDUElTUlYwMVxOVUdSRUVO&query=TODO",
+							"host": [
+								"{{piwebapi}}"
+							],
+							"path": [
+								"elements",
+								"search"
+							],
+							"query": [
+								{
+									"key": "databasewebid",
+									"value": "P1RDUElTUlYwMVxOVUdSRUVO"
+								},
+								{
+									"key": "query",
+									"value": "TODO"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4.3 Attributes search #1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{piwebapi}}/attributes/search?databasewebid=P1RDUElTUlYwMVxOVUdSRUVO&query=TODO",
+							"host": [
+								"{{piwebapi}}"
+							],
+							"path": [
+								"attributes",
+								"search"
+							],
+							"query": [
+								{
+									"key": "databasewebid",
+									"value": "P1RDUElTUlYwMVxOVUdSRUVO"
+								},
+								{
+									"key": "query",
+									"value": "TODO"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4.4 Attributes search #2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{piwebapi}}/attributes/search?databasewebid=P1RDUElTUlYwMVxOVUdSRUVO&query=TODO",
+							"host": [
+								"{{piwebapi}}"
+							],
+							"path": [
+								"attributes",
+								"search"
+							],
+							"query": [
+								{
+									"key": "databasewebid",
+									"value": "P1RDUElTUlYwMVxOVUdSRUVO"
+								},
+								{
+									"key": "query",
+									"value": "TODO"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4.5 Event Frames search #1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{piwebapi}}/eventframes/search?databasewebid=P1RDUElTUlYwMVxOVUdSRUVO&query=TODO",
+							"host": [
+								"{{piwebapi}}"
+							],
+							"path": [
+								"eventframes",
+								"search"
+							],
+							"query": [
+								{
+									"key": "databasewebid",
+									"value": "P1RDUElTUlYwMVxOVUdSRUVO"
+								},
+								{
+									"key": "query",
+									"value": "TODO"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4.6 Event frames search #2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{piwebapi}}/eventframes/search?databasewebid=P1RDUElTUlYwMVxOVUdSRUVO&query=TODO",
+							"host": [
+								"{{piwebapi}}"
+							],
+							"path": [
+								"eventframes",
+								"search"
+							],
+							"query": [
+								{
+									"key": "databasewebid",
+									"value": "P1RDUElTUlYwMVxOVUdSRUVO"
+								},
+								{
+									"key": "query",
+									"value": "TODO"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "bd9b4a7d-8b77-4b31-ae76-5feb854b985a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d8c0d67-438f-40f0-840b-797ac9c369f7",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Exercise Solutions",
+			"item": [
+				{
+					"name": "Exercise 3 - Constructing PI Web API requests",
+					"item": [
+						{
+							"name": "3.1 Get NuGreen AF database",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{piwebapi}}/assetdatabases?path=\\\\PISRV01\\NuGreen",
+									"host": [
+										"{{piwebapi}}"
+									],
+									"path": [
+										"assetdatabases"
+									],
+									"query": [
+										{
+											"key": "path",
+											"value": "\\\\PISRV01\\NuGreen"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.2 Create a new root AF element",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "X-Requested-With",
+										"value": "for-CSRF-defense",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Name\": \"OldGreen\",\r\n  \"Description\": \"NuGreen\",\r\n  \"TemplateName\": \"Enterprise\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{piwebapi}}/assetdatabases/P1RDUElTUlYwMVxOVUdSRUVO/elements",
+									"host": [
+										"{{piwebapi}}"
+									],
+									"path": [
+										"assetdatabases",
+										"P1RDUElTUlYwMVxOVUdSRUVO",
+										"elements"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.3 Create new child element",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "X-Requested-With",
+										"value": "for-CSRF-defense",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Name\": \"ChildElement\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{piwebapi}}/elements/P1EmUElTUlYwMVxOVUdSRUVOXE9MREdSRUVO/elements",
+									"host": [
+										"{{piwebapi}}"
+									],
+									"path": [
+										"elements",
+										"P1EmUElTUlYwMVxOVUdSRUVOXE9MREdSRUVO",
+										"elements"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.4 Create a new static attribute",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "X-Requested-With",
+										"value": "for-CRSF-defense",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Name\": \"MyNewAttribute\",\r\n  \"Description\": \"Created with Postman\",\r\n  \"Type\": \"Int32\",\r\n  \"TypeQualifier\": \"\",\r\n  \"DefaultUnitsName\": \"kilowatt\",\r\n  \"DisplayDigits\": -5,\r\n  \"DataReferencePlugIn\": \"\",\r\n  \"ConfigString\": \"\",\r\n  \"IsConfigurationItem\": false,\r\n  \"IsHidden\": false,\r\n  \"IsManualDataEntry\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{piwebapi}}/elements/P1EmUElTUlYwMVxOVUdSRUVOXE9MREdSRUVOXENISUxERUxFTUVOVA/attributes",
+									"host": [
+										"{{piwebapi}}"
+									],
+									"path": [
+										"elements",
+										"P1EmUElTUlYwMVxOVUdSRUVOXE9MREdSRUVOXENISUxERUxFTUVOVA",
+										"attributes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.5 Create a new PI tag",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "X-Requested-With",
+										"value": "for-CRSF-defense",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"Name\": \"PIWorldTestTag\",\r\n  \"Descriptor\": \"This tag was made with Postman!\",\r\n  \"PointClass\": \"classic\",\r\n  \"PointType\": \"Int32\",\r\n  \"EngineeringUnits\": \"kilowatts\",\r\n  \"Step\": false,\r\n  \"Future\": false,\r\n  \"DisplayDigits\": -5,\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{piwebapi}}/dataservers/P1DSUElTUlYwMQ/points",
+									"host": [
+										"{{piwebapi}}"
+									],
+									"path": [
+										"dataservers",
+										"P1DSUElTUlYwMQ",
+										"points"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.6 Turn compression off for this tag",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "X-Requested-With",
+										"value": "for-CRSF-defense",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "0",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{piwebapi}}/points/P1DPUElTUlYwMVxQSVdPUkxEVEVTVFRBRw/attributes/compressing",
+									"host": [
+										"{{piwebapi}}"
+									],
+									"path": [
+										"points",
+										"P1DPUElTUlYwMVxQSVdPUkxEVEVTVFRBRw",
+										"attributes",
+										"compressing"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.7 Update AF attribute to point to the new tag",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "X-Requested-With",
+										"value": "for-CSRF-defense",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n     \"DataReferencePlugIn\": \"PI Point\",\r\n     \"ConfigString\": \"\\\\\\\\PISRV01\\\\PIWorldTestTag\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{piwebapi}}/attributes/P1AbEUElTUlYwMVxOVUdSRUVOXE9MREdSRUVOXENISUxERUxFTUVOVHxNWU5FV0FUVFJJQlVURQ",
+									"host": [
+										"{{piwebapi}}"
+									],
+									"path": [
+										"attributes",
+										"P1AbEUElTUlYwMVxOVUdSRUVOXE9MREdSRUVOXENISUxERUxFTUVOVHxNWU5FV0FUVFJJQlVURQ"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.8 Write values to tag",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Requested-With",
+										"value": "for-CSRF-defense",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n  {\r\n    \"Timestamp\": \"2020-02-10T00:00:00Z\",\r\n    \"Value\": 1\r\n  },\r\n  {\r\n    \"Timestamp\": \"2020-02-10T01:00:00Z\",\r\n    \"Value\": 2\r\n  },\r\n    {\r\n    \"Timestamp\": \"2020-02-10T02:00:00Z\",\r\n    \"Value\": 3\r\n  },\r\n    {\r\n    \"Timestamp\": \"2020-02-10T03:00:00Z\",\r\n    \"Value\": 4\r\n  },\r\n    {\r\n    \"Timestamp\": \"2020-02-10T04:00:00Z\",\r\n    \"Value\": 5\r\n  }\r\n]"
+								},
+								"url": {
+									"raw": "{{piwebapi}}/streams/P1DPUElTUlYwMVxQSVdPUkxEVEVTVFRBRw/recorded",
+									"host": [
+										"{{piwebapi}}"
+									],
+									"path": [
+										"streams",
+										"P1DPUElTUlYwMVxQSVdPUkxEVEVTVFRBRw",
+										"recorded"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.9 Return the values using the attribute webId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{piwebapi}}/streams/P1AbEUElTUlYwMVxOVUdSRUVOXE9MREdSRUVOXENISUxERUxFTUVOVHxNWU5FV0FUVFJJQlVURQ/recorded?startTime=10-Feb-2020&endTime=11-Feb-2020",
+									"host": [
+										"{{piwebapi}}"
+									],
+									"path": [
+										"streams",
+										"P1AbEUElTUlYwMVxOVUdSRUVOXE9MREdSRUVOXENISUxERUxFTUVOVHxNWU5FV0FUVFJJQlVURQ",
+										"recorded"
+									],
+									"query": [
+										{
+											"key": "startTime",
+											"value": "10-Feb-2020"
+										},
+										{
+											"key": "endTime",
+											"value": "11-Feb-2020"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.10 Demonstrate cache-control",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Cache-Control",
+										"value": "max-age=300",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{piwebapi}}/elements/P1EmUElTUlYwMVxOVUdSRUVOXE9MREdSRUVO/elements",
+									"host": [
+										"{{piwebapi}}"
+									],
+									"path": [
+										"elements",
+										"P1EmUElTUlYwMVxOVUdSRUVOXE9MREdSRUVO",
+										"elements"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "bbcdd8ce-88b3-4d61-a2d0-8703e3199b25",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "221a9922-97cb-40ce-9ffd-cb2889836207",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Exercise 4 - AFSearch endpoints",
+					"item": [
+						{
+							"name": "4.1 Elements search #1",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{piwebapi}}/elements/search?databasewebid=P1RDUElTUlYwMVxOVUdSRUVO&query=name:*b-2* templatename:Boiler",
+									"host": [
+										"{{piwebapi}}"
+									],
+									"path": [
+										"elements",
+										"search"
+									],
+									"query": [
+										{
+											"key": "databasewebid",
+											"value": "P1RDUElTUlYwMVxOVUdSRUVO"
+										},
+										{
+											"key": "query",
+											"value": "name:*b-2* templatename:Boiler"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "4.2 Elements search #2",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{piwebapi}}/elements/search?databasewebid=P1RDUElTUlYwMVxOVUdSRUVO&query=templatename:Pump |Process:'Extruding Plant'  |Manufacturer:Sterns",
+									"host": [
+										"{{piwebapi}}"
+									],
+									"path": [
+										"elements",
+										"search"
+									],
+									"query": [
+										{
+											"key": "databasewebid",
+											"value": "P1RDUElTUlYwMVxOVUdSRUVO"
+										},
+										{
+											"key": "query",
+											"value": "templatename:Pump |Process:'Extruding Plant'  |Manufacturer:Sterns"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "4.3 Attributes search #1",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{piwebapi}}/attributes/search?databasewebid=P1RDUElTUlYwMVxOVUdSRUVO&query=Element:{Template:='Unit'} Name:'*flow*'",
+									"host": [
+										"{{piwebapi}}"
+									],
+									"path": [
+										"attributes",
+										"search"
+									],
+									"query": [
+										{
+											"key": "databasewebid",
+											"value": "P1RDUElTUlYwMVxOVUdSRUVO"
+										},
+										{
+											"key": "query",
+											"value": "Element:{Template:='Unit'} Name:'*flow*'"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "4.4 Attributes search #2",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{piwebapi}}/attributes/search?databasewebid=P1RDUElTUlYwMVxOVUdSRUVO&query=Element:{Template:='Unit'} Name:'*flow*'",
+									"host": [
+										"{{piwebapi}}"
+									],
+									"path": [
+										"attributes",
+										"search"
+									],
+									"query": [
+										{
+											"key": "databasewebid",
+											"value": "P1RDUElTUlYwMVxOVUdSRUVO"
+										},
+										{
+											"key": "query",
+											"value": "Element:{Template:='Unit'} Name:'*flow*'"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "4.5 Event Frames search #1",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{piwebapi}}/eventframes/search?databasewebid=P1RDUElTUlYwMVxOVUdSRUVO&query=Template:OSIUnitProcedure |BatchID:1004",
+									"host": [
+										"{{piwebapi}}"
+									],
+									"path": [
+										"eventframes",
+										"search"
+									],
+									"query": [
+										{
+											"key": "databasewebid",
+											"value": "P1RDUElTUlYwMVxOVUdSRUVO"
+										},
+										{
+											"key": "query",
+											"value": "Template:OSIUnitProcedure |BatchID:1004"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "4.6 Event frames search #2",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{piwebapi}}/eventframes/search?databasewebid=P1RDUElTUlYwMVxOVUdSRUVO&query=Severity:=Critical SortField:StartTime SortOrder:Asc &maxCount=5",
+									"host": [
+										"{{piwebapi}}"
+									],
+									"path": [
+										"eventframes",
+										"search"
+									],
+									"query": [
+										{
+											"key": "databasewebid",
+											"value": "P1RDUElTUlYwMVxOVUdSRUVO"
+										},
+										{
+											"key": "query",
+											"value": "Severity:=Critical SortField:StartTime SortOrder:Asc "
+										},
+										{
+											"key": "maxCount",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "bd9b4a7d-8b77-4b31-ae76-5feb854b985a",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "6d8c0d67-438f-40f0-840b-797ac9c369f7",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "CleanUp",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"DeleteOldGreen\": {\n    \"Method\": \"DELETE\",\n    \"Resource\": \"https://pisrv01.pischool.int/piwebapi/elements/P1EmUElTUlYwMVxOVUdSRUVOXE9MREdSRUVO\",\n    \"Headers\": {\n      \"Cache-Control\": \"no-cache\"\n    }\n  },\n  \"DeletePIWorldTestTag\": {\n    \"Method\": \"DELETE\",\n    \"Resource\": \"https://pisrv01.pischool.int/piwebapi/points/P1DPUElTUlYwMVxQSVdPUkxEVEVTVFRBRw\",\n    \"Headers\": {\n      \"Cache-Control\": \"no-cache\"\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{piwebapi}}/batch",
+							"host": [
+								"{{piwebapi}}"
+							],
+							"path": [
+								"batch"
+							]
+						},
+						"description": "Delete objects made in these exercises"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d1c04259-f0c6-4412-b540-739c8eef4a8d",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "5d4c5ae7-8f6b-40cc-afba-bf1b58e91239",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "RecoverMealSpecialist",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "PISCHOOL\\student01",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "ce9d064b-6ed8-41e5-9838-01c6146ee3a4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "f1e821a1-323b-4130-87fd-d20ff4d769ba",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "2016446a-1406-4e68-bc0c-d3af574babd2",
+			"key": "piwebapi",
+			"value": "https://pisrv01/piwebapi",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
